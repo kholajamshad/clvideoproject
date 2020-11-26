@@ -1,4 +1,4 @@
-/*the icons do not move properly on rescaling*/
+
 body{
 	background-color: black;
 	color: white;
@@ -26,39 +26,55 @@ body{
 .homescreen{
 	width: 750px;
 	height:600px;
-	background-image:url("background1.jpg");
+	/*background-image:url("background1.jpg");*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.homebg{
-	width: 100%;
+.icon{
+	width:25%;
 }
-
-.homeicon{
-	width:10%;
-	position: absolute;
-	left:250px;
-	top:300px;
-}
-.homeicon:hover{
+.icon:hover{
 	cursor: pointer;
 }
 
 .campusscreen{
 	width: 750px;
 	height:600px;
-	background-image:url("logocat.png");
+	/*background-image:url("logocat.png");*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.campusbg{
-	width: 100%;
-}
+.viddiv{
+	z-index: 900;
 
-.campusicon{
-	width:10%;
+}
+.vid{
+	display: none;
+	width:80%;
+	height: 80%;
 	position: absolute;
-	right:250px;
-	top:300px;
+	top:15%;
+	left:10%;
+
 }
-.campusicon:hover{
+
+.close{
+	position: absolute;
+	top:15.25%;
+	right: 10.1%;
+	display: none;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: 0.9em;
+}
+
+.close:hover{
 	cursor: pointer;
+	outline: 1px solid white;
+	font-size: 1em;
 }
