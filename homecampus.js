@@ -1,64 +1,49 @@
-//Variable Declarations
+//VARIABLE DECLARATIONS
 let homeicon=document.getElementById("homeicon");
 let campusicon=document.getElementById("campusicon");
-let video=document.getElementById("vid");
-let close=document.getElementById("close");
 let campusbg=document.getElementById("campusbg");
-let campusscreen=document.getElementById("campusscreen");
+let homebg=document.getElementById("homebg");
 let question=document.getElementById("question");
+let video=document.getElementById("vid");
+let video2=document.getElementById("vid2");
+let close=document.getElementById("close");
 
 
+
+//START PAGE INTERACTIVITY
+
+//Icon Hocer Events
+//hover on icon makes icon colored, makes trailer visible and plays it on loop
 homeicon.addEventListener('mouseover', () => {
-	homeicon.src="colored home.png";
+	homeicon.src="./images/colored home.png";
+	homebg.style.visibility="visible";
+	homebg.play();
 })
-
+//mouse moves away from icon then icon goes back to black and white, trailer paused and hidden
 homeicon.addEventListener('mouseout', () => {
-	homeicon.src="black and white home.png";
+	homeicon.src="./images/black and white home.png";
+	homebg.style.visibility="hidden";
+	homebg.pause();
 })
 
+//same interactivity as homeicon
 campusicon.addEventListener('mouseover', () => {
-	//campusicon.style.opacity="0";
-	campusicon.src="campus colored.png";
-	
-	campusicon.style.width="20%";
-	campusscreen.style.justifyContent="flex-start";
-	campusscreen.style.alignItems="flex-end";
-	
+	campusicon.src="./images/campus colored.png";
 	campusbg.style.visibility="visible";
 	campusbg.play();
 })
-
-
-campusbg.addEventListener('mouseout', () => {
-	//campusicon.style.opacity="100%";
-	
-	
-	campusicon.src="campus black and white.png";
-	campusicon.style.width="35%";
-	campusscreen.style.justifyContent="center";
-	campusscreen.style.alignItems="center";
-	
-	campusbg.style.visibility="hidden";
-	campusbg.pause();
-})
-
-
-/*
 campusicon.addEventListener('mouseout', () => {
-
-	campusicon.src="campus black and white.png";
+	campusicon.src="./images/campus black and white.png";
 	campusbg.style.visibility="hidden";
 	campusbg.pause();
 })
-*/
 
 
 //Icon Click Events
+//clicking on home icon
 homeicon.addEventListener('click', () => {
-	//selects video source and plays it
-	video.src="Khola_whyedit.mp4";
+	//shows associated video and the close button
 	video.style.display="block";
-	video.play();
 	close.style.display="block";
 	
 	//hides icons and question while video plays
@@ -66,39 +51,22 @@ homeicon.addEventListener('click', () => {
 	campusicon.style.display="none";
 	question.style.visibility="hidden";
 });
-
+//same coded interactivity as click on home icon
 campusicon.addEventListener('click', () => {
-	
-	video.src="Khola_whyedit.mp4";
-	video.style.display="block";
-	video.play();
+	video2.style.display="block";
 	close.style.display="block";
 	
 	homeicon.style.display="none";
 	campusicon.style.display="none";
 	question.style.visibility="hidden";
-	
-	//pauses and hides background video once icon clicked (MIGHT REMOVE THIS)
-	campusbg.style.visibility="hidden";
-	campusbg.pause();
-	
 });
 
-//Close Video-Restore Original Page Look
+
+//Close Button Click
 close.addEventListener('click', () => {
-	//closes video window and pauses it
-	video.pause();
-	close.style.display="none";
-	video.style.display="none";
+	//refreshes the page to make sure video stops playing
+	//returns to original page look
+	window.location.reload();
 
-	//displays icons and question
-	homeicon.style.display="block";
-	campusicon.style.display="block";
-	question.style.visibility="visible";
 
-	//(MIGHT REMOVE THIS)
-	campusicon.src="campus black and white.png";
-	campusicon.style.width="35%";
-	campusscreen.style.justifyContent="center";
-	campusscreen.style.alignItems="center";
 })

@@ -1,18 +1,22 @@
-
+/*sets the body background and font*/
 body{
-	background-color: white;
+	background-color: #DCDCDC	;
 	color: black;
+	font-family: 'Montserrat';
 }
 
+
+/*START PAGE DISPLAY*/
 .divide{
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
+
 .question{
 	width: 100%
 	height:20%;
-	font-size: 2em;
+	font-size: 3em;
 	text-align: center;
 }
 
@@ -23,81 +27,77 @@ body{
 	justify-content: space-around;
 }
 
-.homescreen{
+.screen{
 	width: 750px;
-	height:600px;
-	/*background-image:url("background1.jpg");*/
+	height:500px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
+    position: relative;
 }
 
+/*controls hover activity for icons: size increase and visible on top of trailer*/
 .icon{
-	width:35%;
+	width:45%;
 	z-index: 100;
 }
 .icon:hover{
 	cursor: pointer;
+	width: 50%;
+}
+#campusicon{
+	width: 50%;
+}
+#campusicon:hover{
+	width: 55%;
 }
 
-#homeicon:hover{
-	width: 40%;
-}
-
-
-.campusscreen{
-	width: 750px;
-	height:600px;
-	/*background-image:url("logocat.png");*/
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    overflow: hidden;
-    position: relative;
-}
-
-
-.campusbg {
-  min-width: 100%;
-  min-height: 100%;
+/*trailer positioning, hides it till hover, and reduced opacity and color*/
+.bg {
+  max-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   visibility: hidden;
   opacity: 50%;
+  filter:grayscale(70%);
 }
 
 
-}
-
+/*VIDEO PLAYER*/
 .viddiv{
+	width: 100%;
 	z-index: 900;
-
 }
+
+/*no display till icon clicked and video positioning*/
 .vid{
+	width: 100%;
+	height:100%;
 	display: none;
-	width:80%;
-	height: 80%;
 	position: absolute;
-	top:15%;
-	left:10%;
-
+	top:10%;
+	left:15%;
 }
 
+/*close button for the videos, hidden till icon clicked*/
 .close{
 	position: absolute;
-	top:15.25%;
-	right: 10.1%;
+	top:10%;
+	right: 11%;
 	display: none;
 	background-color: transparent;
 	border: none;
 	color: black;
-	font-size: 0.9em;
+	font-size: 1.5em;
 }
-
+/*highlights close button on hover*/
 .close:hover{
 	cursor: pointer;
 	outline: 1px solid white;
-	font-size: 1em;
+	font-size: 2em;
 }
+
+

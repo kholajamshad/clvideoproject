@@ -3,38 +3,53 @@
   <head>
     <meta charset="utf-8" />
 
-    <title>HomeCampus</title>
+    <title>View from the Other Side</title>
 
     <link rel="stylesheet" href="homecampus.css" />
-    <!--<link href="https://fonts.googleapis.com/css?family=Architects Daughter" rel="stylesheet"/> Font -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!--Font -->
   </head>
 
   <body>
 
+  	<!--STARTING PAGE DISPLAY WITH QUESTION AND ICONS-->
   	<div class="divide">
   		<div class="question" id="question">
-  			<p>Which would you choose</p>
+  			<p>Where are you now?</p>
   		</div>
 
   		<div class="screens">
 
-		  	<div class="campusscreen" id="campusscreen">
-		  		<video class="campusbg" id="campusbg" muted loop>
-		  			<source src="Khola_whyedit.mp4" type="video/mp4">
+  			<!--trailers and icons for campus and home-->
+		  	<div class="screen">
+		  		<video class="bg" id="campusbg" muted loop>
+		  			<source src="./videos/campustrailers.mp4" type="video/mp4">
 		  		</video>
-				<img class="icon" id="campusicon" src="campus black and white.png">
+				<img class="icon" id="campusicon" src="./images/campus black and white.png">
 		  	</div>
 
-		  	<div class="homescreen">
-				<img class="icon" id="homeicon" src="black and white home.png">
+		  	<div class="screen">
+		  		<video class="bg" id="homebg" muted loop>
+		  			<source src="./videos/hometrailers.mp4" type="video/mp4">
+		  		</video>
+				<img class="icon" id="homeicon" src="./images/black and white home.png">
 		  	</div>
 
 		 </div>
  	</div>
+
+
+ 	<!--VIDEOS AND CLOSE BUTTON THAT SHOWS UP ON ICON CLICK-->
  	<div class="viddiv">
-	 	<video class="vid" id="vid" id="myVideo" controls>
-			<source src="Khola_whyedit.mp4" type="video/mp4">
-		</video>
+ 		<!--home video-->
+ 		<div class="vid" id="vid">
+ 			<iframe width="70%" height="80%" src="https://www.youtube.com/embed/0c9ycqIH618" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 		</div>
+ 		<!--campus video-->
+ 		 <div class="vid" id="vid2">
+ 			<iframe width="70%" height="80%" src="https://www.youtube.com/embed/2ESKUbqXZpw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ 		</div>
+
+ 		<!--button to close video and return to start page-->
 		<button class="close" id="close">X</button>
 	</div>
 
@@ -43,3 +58,4 @@
   </body>
 
 </html>
+
